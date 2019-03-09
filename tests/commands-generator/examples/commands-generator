@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+cd "${BASH_SOURCE[0]%/*}" || exit
+
+set -- .scripts /tmp/bin
+[ -e "$2" ] && { rm -fr "$2" || exit; }
+
+( set -x; commands-generator "$@" ) || exit
+( set -x; find "$2" -mindepth 1 )

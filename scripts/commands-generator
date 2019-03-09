@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+usage() {
+    cat <<EOF 1>&2
+usage: $(basename $0) scripts_dir commands_dir
+EOF
+    [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
+}
+
+[[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
+
+[[ $# != 2 ]] && usage
+
+[[ $1 == /* ]] && echo "ERROR: scripts absolute path not allowed - $1" 1>&2 && exit 1
+
+scripts="$(find "$1" -type f ! -name ".*")" || exit
+! [ -d "$2" ] && { mkdir -p "$2" || exit; }
+
+[[ -n "$scripts" ]] && while IFS= read src; do
+    head -n 1 "$src" | grep -q ^"#!" || continue
+    name="$(echo "$src" | sed -e "s:$1\/::g" -e "s:/:\::g" | sed -e 's/\.[^.]*$//')"
+    dst="$2/$name"
+    [[ -n "${dst%/*}" ]] && ! [ -e "${dst%/*}" ] && { mkdir -p "${dst%/*}" || exit; }
+    cp "$src" "$dst" || exit
+    chmod +x "$dst" || exit
+done <<< "$scripts";:

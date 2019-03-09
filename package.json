@@ -1,0 +1,14 @@
+{
+  "name": "commands-generator",
+  "version": "2019.03.09",
+  "description": "generate shell commands from scripts",
+  "keywords": [
+    "commands",
+    "scripts"
+  ],
+  "homepage": "https://github.com/looking-for-a-job/commands-generator",
+  "license": "Unlicense",
+  "bin": {
+    "commands-generator": "./scripts/commands-generator"
+  }
+}
