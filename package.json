@@ -1,6 +1,6 @@
 {
   "name": "commands-generator",
-  "version": "2019.3.22",
+  "version": "2019.4.13",
   "description": "generate shell commands from scripts",
   "keywords": [
     "commands",
