@@ -1,4 +1,8 @@
-#!/usr/bin/env python
-from setuptools import setup
+import setuptools
 
-setup()
+setuptools.setup(
+    name='commands-generator',
+    install_requires=open('requirements.txt').read().splitlines(),
+    packages=setuptools.find_packages(),
+    scripts=['scripts/commands-generator']
+)

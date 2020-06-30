@@ -5,10 +5,10 @@ usage() {
     cat <<EOF 1>&2
 usage: $(basename $0) scripts_dir commands_dir
 EOF
-    [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
+    [ "$1" = "-h" ] || [ "$1" = "--help" ]; exit
 }
 
-[[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
+[ "$1" = "-h" ] || [ "$1" = "--help" ] && usage "$@"
 
 [[ $# != 2 ]] && usage
 

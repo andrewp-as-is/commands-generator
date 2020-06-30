@@ -1,24 +1,22 @@
 <!--
-https://pypi.org/project/readme-generator/
-https://pypi.org/project/python-readme-generator/
+https://readme42.com
 -->
+
+
 
 [![](https://img.shields.io/badge/OS-Unix-blue.svg?longCache=True)]()
 [![](https://img.shields.io/pypi/v/commands-generator.svg?maxAge=3600)](https://pypi.org/project/commands-generator/)
-[![](https://img.shields.io/npm/v/commands-generator.svg?maxAge=3600)](https://www.npmjs.com/package/commands-generator)
-[![Travis](https://api.travis-ci.org/looking-for-a-job/commands-generator.svg?branch=master)](https://travis-ci.org/looking-for-a-job/commands-generator/)
+[![](https://img.shields.io/npm/v/commands-generator.svg?maxAge=3600)](https://www.npmjs.com/package/commands-generator)[![](https://img.shields.io/badge/License-Unlicense-blue.svg?longCache=True)](https://unlicense.org/)
+[![](https://github.com/andrewp-as-is/commands-generator/workflows/tests42/badge.svg)](https://github.com/andrewp-as-is/commands-generator/actions)
 
-#### Installation
-```bash
-$ [sudo] npm i -g commands-generator
-```
+### Installation
 ```bash
 $ [sudo] pip install commands-generator
 ```
 
-#### Features
-+   generate **shell commands from scripts**
-+   **shell namespaces** - `namespace:command`. folder names as namespaces
+```bash
+$ [sudo] npm i -g commands-generator
+```
 
 #### How it works
 scripts (shebang `#!` required):
@@ -33,15 +31,14 @@ namespace:script
 namespace:subnamespace:script
 ```
 
+#### Features
++   generate **shell commands from scripts**
++   **shell namespaces** - `namespace:command`. folder names as namespaces
+
 #### Config
 `~/.bashrc`:
 
 `export PATH=path/to/commands:$PATH`
-
-#### Scripts usage
-```bash
-usage: commands-generator scripts_dir commands_dir
-```
 
 #### Examples
 generate `~/.local/share/bin` from `dotfiles/scripts`:
@@ -71,7 +68,7 @@ $ git:commit
 $ web:github.com:push
 ```
 
-#### Related projects
+#### Related
 +   [`classifiers-generator` - python classifiers generator](https://pypi.org/project/classifiers-generator/)
 +   [`commands-generator` - shell commands generator](https://pypi.org/project/commands-generator/)
 +   [`launchd-generator` - launchd.plist generator](https://pypi.org/project/launchd-generator/)
@@ -80,5 +77,5 @@ $ web:github.com:push
 +   [`travis-generator` - `.travis.yml` generator](https://pypi.org/project/travis-generator/)
 
 <p align="center">
-    <a href="https://pypi.org/project/python-readme-generator/">python-readme-generator</a>
+    <a href="https://readme42.com/">readme42.com</a>
 </p>
